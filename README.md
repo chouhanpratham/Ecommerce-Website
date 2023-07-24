@@ -1,4 +1,4 @@
-# E-commerce-App
+# E-commerce-Website
 
 ## DAY-01 Started the Development
 
