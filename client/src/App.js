@@ -4,17 +4,37 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import PolicyPage from "./pages/Policy";
 import PageNotFound from "./pages/Pagenotfound";
-import RegisterPage from "./pages/Auth/Resister";
+import RegisterPage from "./pages/Auth/Register";
 import LoginPage from "./pages/Auth/Login";
 import DashboardPage from "./pages/user/Dashboard";
+import PrivateRoute from "./components/Routes/Private";
+import ForgotPasswordPage from "./pages/Auth/ForgotPassword";
+import AdminRoute from "./components/Routes/AdminRoute";
+import Admin_dashboard from "./pages/Admin/AdminDashboard";
+import Create_category from "./pages/Admin/CreateCategory";
+import Create_product from "./pages/Admin/CreateProduct";
+import UsersPage from "./pages/Admin/Users";
+import OrdersPage from "./pages/user/Orders";
+import ProfilePage from "./pages/user/Profile";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/dashboard" element={<PrivateRoute />}>
+          <Route path="user" element={<DashboardPage />} />
+          <Route path="user/orders" element={<OrdersPage />} />
+          <Route path="user/profile" element={<ProfilePage />} />
+        </Route>
+        <Route path="/dashboard" element={<AdminRoute />}>
+          <Route path="admin" element={<Admin_dashboard />} />
+          <Route path="admin/create-category" element={<Create_category />} />
+          <Route path="admin/create-product" element={<Create_product />} />
+          <Route path="admin/users" element={<UsersPage />} />
+        </Route>
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />

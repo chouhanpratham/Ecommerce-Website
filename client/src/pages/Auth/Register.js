@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -10,9 +10,10 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
-  //form function
+  // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -22,6 +23,7 @@ const RegisterPage = () => {
         password,
         phone,
         address,
+        answer,
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
@@ -36,8 +38,8 @@ const RegisterPage = () => {
   };
 
   return (
-    <Layout title={"Register - Ecommerce"}>
-      <div className="form-container">
+    <Layout title="Register - Ecommer App">
+      <div className="form-container ">
         <form onSubmit={handleSubmit}>
           <h4 className="title">REGISTER FORM</h4>
           <div className="mb-3">
@@ -46,9 +48,10 @@ const RegisterPage = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="form-control"
-              id="exampleInputName"
-              placeholder="Enter your Name"
+              id="exampleInputEmail1"
+              placeholder="Enter Your Name"
               required
+              autoFocus
             />
           </div>
           <div className="mb-3">
@@ -57,8 +60,8 @@ const RegisterPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
-              id="exampleInputEmail"
-              placeholder="Enter your Email"
+              id="exampleInputEmail1"
+              placeholder="Enter Your Email "
               required
             />
           </div>
@@ -68,8 +71,8 @@ const RegisterPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-control"
-              id="exampleInputPassword"
-              placeholder="Enter your Password"
+              id="exampleInputPassword1"
+              placeholder="Enter Your Password"
               required
             />
           </div>
@@ -79,8 +82,8 @@ const RegisterPage = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="form-control"
-              id="exampleInputPhone"
-              placeholder="Enter your Phone No."
+              id="exampleInputEmail1"
+              placeholder="Enter Your Phone"
               required
             />
           </div>
@@ -90,13 +93,24 @@ const RegisterPage = () => {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               className="form-control"
-              id="exampleInputAddress"
+              id="exampleInputEmail1"
               placeholder="Enter Your Address"
               required
             />
           </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputEmail1"
+              placeholder="What is Your Nick Name"
+              required
+            />
+          </div>
           <button type="submit" className="btn btn-primary">
-            Register
+            REGISTER
           </button>
         </form>
       </div>
