@@ -1,10 +1,18 @@
 import express from "express";
 import {
+  brainTreePaymentControl,
+  braintreeTokenControl,
   createProductControl,
   deleteProductControl,
   getProductControl,
   getSingleProductControl,
+  productCategoryControl,
+  productCountControl,
+  productFiltersControl,
+  productListControl,
   productPhotoControl,
+  realtedProductControl,
+  searchProductControl,
   updateProductControl,
 } from "../controllers/productController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
@@ -39,6 +47,31 @@ router.get("/get-product/:slug", getSingleProductControl);
 router.get("/product-photo/:pid", productPhotoControl);
 
 //delete product
-router.delete("/product/:pid", deleteProductControl);
+router.delete("/delete-product/:pid", deleteProductControl);
+
+//filter product
+router.post("/product-filters", productFiltersControl);
+
+//product count
+router.get("/product-count", productCountControl);
+
+//product per page
+router.get("/product-list/:page", productListControl);
+
+//search product
+router.get("/search/:keyword", searchProductControl);
+
+//similar product
+router.get("/related-product/:pid/:cid", realtedProductControl);
+
+//category wise product
+router.get("/product-category/:slug", productCategoryControl);
+
+//payments routes
+//token
+router.get("/braintree/token", braintreeTokenControl);
+
+//payments
+router.post("/braintree/payment", requireSignIn, brainTreePaymentControl);
 
 export default router;

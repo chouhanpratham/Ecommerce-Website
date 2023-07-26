@@ -16,12 +16,24 @@ import Create_product from "./pages/Admin/CreateProduct";
 import UsersPage from "./pages/Admin/Users";
 import OrdersPage from "./pages/user/Orders";
 import ProfilePage from "./pages/user/Profile";
+import ProductsPage from "./pages/Admin/Products";
+import UpdateProductPage from "./pages/Admin/UpdateProduct";
+import SearchPage from "./pages/Search";
+import ProductDetailsPage from "./pages/ProductDetails";
+import CategoriesPage from "./pages/Categories";
+import CategoryProductPage from "./pages/CategoryProduct";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/product/:slug" element={<ProductDetailsPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/category/:slug" element={<CategoryProductPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<DashboardPage />} />
           <Route path="user/orders" element={<OrdersPage />} />
@@ -31,6 +43,8 @@ function App() {
           <Route path="admin" element={<Admin_dashboard />} />
           <Route path="admin/create-category" element={<Create_category />} />
           <Route path="admin/create-product" element={<Create_product />} />
+          <Route path="admin/product/:slug" element={<UpdateProductPage />} />
+          <Route path="admin/products" element={<ProductsPage />} />
           <Route path="admin/users" element={<UsersPage />} />
         </Route>
         <Route path="/register" element={<RegisterPage />} />

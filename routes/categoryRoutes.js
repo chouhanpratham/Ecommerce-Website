@@ -22,7 +22,7 @@ router.put(
   updateCategoryControl
 );
 
-//getALl category
+//getAll category
 router.get("/get-category", categoryControl);
 
 //single category
