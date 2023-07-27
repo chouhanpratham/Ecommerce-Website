@@ -13,9 +13,12 @@ const AboutPage = () => {
           />
         </div>
         <div className="col-md-4">
-          <h1 className="text-center">About Us</h1>
+          <h1 className="bg-dark p-2 text-white text-center">ABOUT US</h1>
+          <h4 className="text-justify text-center ">
+            Our mission is to provide best product and services.
+          </h4>
           <p className="text-justify text-center ">
-            P Group is a new E-commerce website.
+             PRIGITAL is a new P Group website dreamt to provide best digital products.
           </p>
         </div>
       </div>

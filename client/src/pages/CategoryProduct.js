@@ -4,6 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useCart } from "../context/cart";
+import { Link } from "react-router-dom";
+import "../styles/CategoryProductStyles.css";
 
 const CategoryProductPage = () => {
   const params = useParams();
@@ -29,48 +31,59 @@ const CategoryProductPage = () => {
 
   return (
     <Layout>
-      <div className="container mt-3">
+      <div className="container mt-3 ">
         <h4 className="text-center">Category - {category?.name}</h4>
-        <h6 className="text-center">{products?.length} result found </h6>
+        <h6 className="text-center">{products?.length} Result Found </h6>
         <div className="row">
-          <div className="col-md-9 offset-1">
+          <div className="col-md-13 category">
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
-                <div
-                  className="card m-2"
-                  style={{ width: "18rem" }}
-                  key={p._id}
-                >
-                  <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
-                    alt={p.name}
-                  />
+                <div className="card m-2 " key={p._id}>
+                  <Link
+                    key={p._id}
+                    to={`/product/${p.slug}`}
+                    className="product-link"
+                  >
+                    <img
+                      src={`/api/v1/product/product-photo/${p._id}`}
+                      className="card-img-top"
+                      alt={p.name}
+                    />
+                  </Link>
                   <div className="card-body">
-                    <h5 className="card-title">{p.name}</h5>
+                    <div className="card-name-price">
+                      <h5 className="card-title">{p.name}</h5>
+                      <h5 className="card-title card-price">
+                        {p.price.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </h5>
+                    </div>
                     <p className="card-text">
-                      {p.description.substring(0, 60)}...
+                      {p.description.substring(0, 50)}...
                     </p>
-                    <p className="card-text"> ₹ {p.price}</p>
-                    <button
-                      className="btn btn-primary ms-1"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
-                    <button
-                      className="btn btn-secondary ms-1"
-                      onClick={() => {
-                        setCart([...cart, p]);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringify([...cart, p])
-                        );
-                        toast.success("Item Added to Cart");
-                      }}
-                    >
-                      ADD TO CART
-                    </button>
+                    <div className="card-name-price">
+                      <button
+                        className="btn btn-info ms-1"
+                        onClick={() => navigate(`/product/${p.slug}`)}
+                      >
+                        More Details
+                      </button>
+                      <button
+                        className="btn btn-dark ms-1"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to Cart");
+                        }}
+                      >
+                        ADD TO CART
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}

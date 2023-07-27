@@ -22,7 +22,7 @@ const HeaderPage = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-secondary">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -36,8 +36,9 @@ const HeaderPage = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
-              Ecommerce Website
+            <div className="image">🛍️</div>
+            <Link to="/" className="navbar-brand nav">
+            PRIGITAL
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />
