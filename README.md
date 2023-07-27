@@ -16,3 +16,7 @@ Build the Login and register authentication and backend API's.<br>
 ## DAY -04 - Adding Functionality of Search and Filter and Cart
 
 <br> Added the functionality of search and filter in frontend and developed the cart page and user profile to be accessed by the user and from there can update and see the product info. Cart with the functionality of is there an item or not and can send the user to the login page is user is not login. <br>
+
+## DAY -05 - Styling of the Frontend and Payment functionality.
+
+<br>Made changes in the css of the pages in frontend and payment gateway is now functional and effect can be seen in the database.<br>
