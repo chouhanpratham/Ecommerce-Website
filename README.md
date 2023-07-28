@@ -1,4 +1,4 @@
-# E-commerce-Website
+# E-commerce-Website - Prigital
 
 ## DAY-01 Started the Development
 
@@ -20,3 +20,7 @@ Build the Login and register authentication and backend API's.<br>
 ## DAY -05 - Styling of the Frontend and Payment functionality.
 
 <br>Made changes in the css of the pages in frontend and payment gateway is now functional and effect can be seen in the database.<br>
+
+## DAY -06 - Completed the styling of the website and Deployed the Prigital Website
+
+<br>1. Completed the styling of pages and website.<br>2.Deployed the website on cyclic platform.<br>3. Posted the postman documentation for review.<br>
