@@ -47,3 +47,24 @@
   .similar-products .card-img-top {
     height: 300px !important;
   }
+
+  /* media */
+
+@media(max-width:600px){
+  .col-md-6{
+    margin: 0;
+    padding: 0px;
+    text-align: start;
+    justify-content: center;
+  }
+  .detail{
+    margin: 0;
+    padding-left: 30px;
+    justify-content: center;
+  }
+  .similar-products{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+}

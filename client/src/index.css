@@ -157,3 +157,30 @@
   color: white;
   padding: 20px 0px;
 }
+
+/* media */
+@media (max-width: 600px) {
+  .about {
+    padding: 0;
+    margin: 20px;
+  }
+  .contact{
+    padding: 0;
+    margin: 20px;
+  }
+  .policy{
+    padding: 0;
+    margin: 20px;
+    justify-content: center;
+  }
+  .search{
+    padding: 0;
+    margin-right: 25px;
+    justify-content: center;
+  }
+  .categories{
+    padding: 0;
+    margin-left: 10px;
+    justify-content: center;
+  }
+}

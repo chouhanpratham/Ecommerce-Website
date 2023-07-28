@@ -54,7 +54,7 @@ const ProductDetailsPage = () => {
             width={"350px"}
           />
         </div>
-        <div className="col-md-6 ">
+        <div className="col-md-6 detail">
           <h1 className="text-center">Product Details</h1>
           <h6>Name : {product.name}</h6>
           <h6>Description : {product.description}</h6>

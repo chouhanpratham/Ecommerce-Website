@@ -35,7 +35,7 @@ const CategoryProductPage = () => {
         <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} Result Found </h6>
         <div className="row">
-          <div className="col-md-13 category">
+          <div className="col-md-12 category">
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
                 <div className="card m-2 " key={p._id}>

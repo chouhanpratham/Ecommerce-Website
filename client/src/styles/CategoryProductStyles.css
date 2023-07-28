@@ -39,3 +39,12 @@
   .category .card-img-top {
     height: 300px !important;
   }
+
+/* media */
+@media (max-width: 600px) {
+  .row{
+    padding: 0;
+    margin-right: 0;
+    justify-content: center;
+  }
+}

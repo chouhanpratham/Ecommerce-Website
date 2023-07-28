@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 const AboutPage = () => {
   return (
     <Layout title={"About us - Ecommerce"}>
-      <div className="row contactus ">
+      <div className="row contactus about ">
         <div className="col-md-6 ">
           <img
             src="/images/about.jpg"

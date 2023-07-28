@@ -120,7 +120,7 @@ const HomePage = () => {
       <div className="container-fluid row  home-page">
         <div className="col-md-3 filters">
           <h4 className="text-center">Filter By Category</h4>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column filter">
             {categories?.map((c) => (
               <Checkbox
                 key={c._id}
@@ -151,7 +151,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9 ">
-          <h1 className="text-center">All Products</h1>
+          <h1 className="text-center marginProduct">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>

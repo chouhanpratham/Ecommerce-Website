@@ -22,9 +22,9 @@ const SearchPage = () => {
               : `Found ${values?.results.length}`}
           </h6>
         </div>
-        <div className="row">
+        <div className="row search">
           <div className="category ">
-            <div className="d-flex flex-wrap ">
+            <div className=" d-flex flex-wrap ">
               {values?.results.map((p) => (
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <Link
